@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Clone</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0XvFduY7sDBknSh_lJd80OzsdZ_LaHL2w-g&s">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="grid grid-cols-[80px_300px_auto] h-full">
+        <!-- for left button options -->
+        <ul class="bg-[#eaf1fb] space-y-5">
+            <!-- for menu button -->
+            <li class="flex flex-col justify-center items-center">
+              <div class="p-4 cursor-pointer rounded-full mt-2 transition-all duration-200 ease-in-out hover:bg-gray-200">
+                <svg focusable="false" viewBox="0 0 24 24" class="w-7 h-7">
+                  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                </svg>
+              </div>
+            </li>
+    
+            <!-- for mail -->
+            <li class="flex flex-col justify-center items-center">
+              <div class="px-4 py-2 cursor-pointer bg-[#d3e3fd] rounded-3xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                </svg>
+              </div>
+              <p class="text-sm font-semibold">Mail</p>
+            </li>
+    
+            <!-- for chat -->
+            <li class="flex flex-col justify-center items-center">
+              <div class="px-4 py-2 cursor-pointer transition-all duration-200 ease-in-out hover:bg-[#d3e3fd] hover:rounded-3xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"></path>
+                </svg>
+              </div>
+    
+              <p class="text-sm font">Chat</p>
+            </li>
+    
+            <!-- for spaces -->
+            <li class="flex flex-col justify-center items-center">
+              <div class="px-3 py-1 cursor-pointer transition-all duration-200 ease-in-out hover:bg-[#d3e3fd] hover:rounded-3xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path>
+                </svg>
+              </div>
+    
+              <p class="text-sm">Spaces</p>
+            </li>
+    
+            <!-- for meet -->
+            <li class="flex flex-col justify-center items-center">
+              <div class="px-3 py-1 cursor-pointer transition-all duration-200 ease-in-out hover:bg-[#d3e3fd] hover:rounded-3xl">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"></path>
+                </svg>
+              </div>
+    
+              <p class="text-sm">Meet</p>
+            </li>
+          </ul>
+        
+        <!-- second sidebar -->
+        <div class=" flex flex-col bg-gray-100 w-[250px]">
+            <div class="flex p-3">
+                <svg class="h-12 w-12 bg-gray-100" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 11.9556C2 8.47078 2 6.7284 2.67818 5.39739C3.27473 4.22661 4.22661 3.27473 5.39739 2.67818C6.7284 2 8.47078 2 11.9556 2H20.0444C23.5292 2 25.2716 2 26.6026 2.67818C27.7734 3.27473 28.7253 4.22661 29.3218 5.39739C30 6.7284 30 8.47078 30 11.9556V20.0444C30 23.5292 30 25.2716 29.3218 26.6026C28.7253 27.7734 27.7734 28.7253 26.6026 29.3218C25.2716 30 23.5292 30 20.0444 30H11.9556C8.47078 30 6.7284 30 5.39739 29.3218C4.22661 28.7253 3.27473 27.7734 2.67818 26.6026C2 25.2716 2 23.5292 2 20.0444V11.9556Z" fill="white"/>
+                    <path d="M22.0515 8.52295L16.0644 13.1954L9.94043 8.52295V8.52421L9.94783 8.53053V15.0732L15.9954 19.8466L22.0515 15.2575V8.52295Z" fill="#EA4335"/>
+                    <path d="M23.6231 7.38639L22.0508 8.52292V15.2575L26.9983 11.459V9.17074C26.9983 9.17074 26.3978 5.90258 23.6231 7.38639Z" fill="#FBBC05"/>
+                    <path d="M22.0508 15.2575V23.9924H25.8428C25.8428 23.9924 26.9219 23.8813 26.9995 22.6513V11.459L22.0508 15.2575Z" fill="#34A853"/>
+                    <path d="M9.94811 24.0001V15.0732L9.94043 15.0669L9.94811 24.0001Z" fill="#C5221F"/>
+                    <path d="M9.94014 8.52404L8.37646 7.39382C5.60179 5.91001 5 9.17692 5 9.17692V11.4651L9.94014 15.0667V8.52404Z" fill="#C5221F"/>
+                    <path d="M9.94043 8.52441V15.0671L9.94811 15.0734V8.53073L9.94043 8.52441Z" fill="#C5221F"/>
+                    <path d="M5 11.4668V22.6591C5.07646 23.8904 6.15673 24.0003 6.15673 24.0003H9.94877L9.94014 15.0671L5 11.4668Z" fill="#4285F4"/>
+                    </svg>
+                <h1 class="text-2xl font-semi-bold p-2 text-gray-700">Gmail</h1>
+            </div>
+            <!-- under the sidebar -->
+           <div class="ml-4 mt-4">
+            <div>
+                <button class="flex items-center px-6 py-4  border rounded-full text-black border-none bg-blue-200">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.65661 17L6.99975 17L6.99975 14M6.10235 14.8974L17.4107 3.58902C18.1918 2.80797 19.4581 2.80797 20.2392 3.58902C21.0202 4.37007 21.0202 5.6364 20.2392 6.41745L8.764 17.8926C8.22794 18.4287 7.95992 18.6967 7.6632 18.9271C7.39965 19.1318 7.11947 19.3142 6.8256 19.4723C6.49475 19.6503 6.14115 19.7868 5.43395 20.0599L3 20.9998L3.78312 18.6501C4.05039 17.8483 4.18403 17.4473 4.3699 17.0729C4.53497 16.7404 4.73054 16.424 4.95409 16.1276C5.20582 15.7939 5.50466 15.4951 6.10235 14.8974Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="ml-3 text-semi-bold">Compose</span>
+                </button>
+            </div>
+
+            <div class="flex mt-4 flex items-center gap-5 font-semibold bg-[#D3E3FD] px-5 rounded-2xl py-[1.5px] mb-1 cursor-pointer">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.0799 19 6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V12M3 12H6.67452C7.16369 12 7.40829 12 7.63846 12.0553C7.84254 12.1043 8.03763 12.1851 8.21657 12.2947C8.4184 12.4184 8.59136 12.5914 8.93726 12.9373L9.06274 13.0627C9.40865 13.4086 9.5816 13.5816 9.78343 13.7053C9.96237 13.8149 10.1575 13.8957 10.3615 13.9447C10.5917 14 10.8363 14 11.3255 14H12.6745C13.1637 14 13.4083 14 13.6385 13.9447C13.8425 13.8957 14.0376 13.8149 14.2166 13.7053C14.4184 13.5816 14.5914 13.4086 14.9373 13.0627L15.0627 12.9373C15.4086 12.5914 15.5816 12.4184 15.7834 12.2947C15.9624 12.1851 16.1575 12.1043 16.3615 12.0553C16.5917 12 16.8363 12 17.3255 12H21M3 12L5.32639 6.83025C5.78752 5.8055 6.0181 5.29312 6.38026 4.91755C6.70041 4.58556 7.09278 4.33186 7.52691 4.17615C8.01802 4 8.57988 4 9.70361 4H14.2964C15.4201 4 15.982 4 16.4731 4.17615C16.9072 4.33186 17.2996 4.58556 17.6197 4.91755C17.9819 5.29312 18.2125 5.8055 18.6736 6.83025L21 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Inbox</span>
+            </div>
+
+            <div class="w-full flex items-center gap-5 transition-all duration-200 ease-in-out hover:bg-gray-200 px-5 rounded-2xl py-[1.5px] mb-1 cursor-pointer">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Starred</span>
+            </div>
+
+            <div class="w-full flex items-center gap-5 transition-all duration-200 ease-in-out hover:bg-gray-200 px-5 rounded-2xl py-[1.5px] mb-1 cursor-pointer">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 7V12L14.5 10.5M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Snoozed</span>
+            </div>
+
+            <div class="w-full flex items-center gap-5 transition-all duration-200 ease-in-out hover:bg-gray-200 px-5 rounded-2xl py-[1.5px] mb-1 cursor-pointer">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 9H6M9 12H4M9 15H6M12.9825 7.61408L20 12L12.9825 16.3859C12.6108 16.6183 12.1412 16.2938 12.2272 15.8639L13 12L12.2272 8.13613C12.1412 7.70625 12.6108 7.38173 12.9825 7.61408Z" stroke="#464455" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Sent</span>
+            </div>
+
+            <div class="w-full flex items-center gap-5 transition-all duration-200 ease-in-out hover:bg-gray-200 px-5 rounded-2xl py-[1.5px] mb-1 cursor-pointer">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 18.5V9.62132C6 9.2235 6.15803 8.84197 6.43934 8.56066L10.5607 4.43934C10.842 4.15804 11.2235 4 11.6213 4H16.5C17.3284 4 18 4.67157 18 5.5V18.5C18 19.3284 17.3284 20 16.5 20H7.5C6.67157 20 6 19.3284 6 18.5Z" stroke="#000000" stroke-width="2"/>
+                    <path d="M6 10H10.5C11.3284 10 12 9.32843 12 8.5V4" stroke="#000000" stroke-width="1.5"/>
+                    </svg>
+                    <span>Drafts</span>
+            </div>
+
+            <div class="w-full flex items-center gap-5 transition-all duration-200 ease-in-out hover:bg-gray-200 px-5 rounded-2xl py-[1.5px] mb-1 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                  </svg>
+      
+                  <span>More</span>
+            </div>
+           </div>
+
+           <!-- for labels -->
+           <div class="flex items-center justify-between font-semibold text-lg">
+            <h2 class="pl-9 mt-5">Labels</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
+            </svg>
+          </div>
+
+          <!-- for labels -->
+          <ul class="w-full">
+            <li class="flex items-center justify-between mt-3 mb-1 pl-10 py-[1.5px] font-semibold cursor-pointer transition-all duration-200 ease-in-out hover:bg-gray-200 hover:rounded-3xl group">
+              <div class="flex items-center gap-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"></path>
+                </svg>
+                <p>Scrum</p>
+              </div>
+        </div>
+
+        <!-- complete mail section -->
+
+        <section class="bg-[#FFFFFF] h-screen flex flex-col ml-[-50px]">
+            <header class="bg-[#F6F8FC] flex items-center justify-between py-2 h-[13vh] 2xl:h-[8vh] ">
+                <!-- for search bar -->
+                <div class="flex items-center gap-3 w-[450px] 2xl:w-[700px] bg-[#EAF1FB] h-[9vh] 2xl:h-[6vh] px-1 rounded-full">
+                    <div class="p-2 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="#5F6368" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+                        </svg>
+                      </div>
+
+                    <input type="text" placeholder="Search in emails" class="bg-transparent w-full text-lg">
+                    <div class="p-2 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#5F6368" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"></path>
+                    </svg>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-5 pl-[100px]">
+                    <!-- for active button -->
+                     <div class="flex items-center gap-2 bg-[#EAF1FB] h-[9vh] 2xl:h-[6vh] px-4 rounded-full font-semibold">
+                        <!-- for green dot -->
+                        <div class="h-3 w-3 bg-green-700 rounded-full"></div>
+                        <p>Active</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                     </div>
+
+                
+                    <!-- for question mark -->
+                <div class="p-2 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#5F6368" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"></path>
+                    </svg>
+                </div>
+
+                <!-- for setting -->
+                <div class="p-2 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#5F6368" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                      </svg>
+                </div>
+
+                            <!-- for squares -->
+                <div class="p-2 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#5F6368" class="w-6 h-6">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"></path>
+                     </svg>
+                </div>
+  
+              <!-- for account logo -->
+                <div class="flex items-center justify-center rounded-full w-10 h-10 bg-violet-500 font-semibold text-white text-lg cursor-pointer">
+                   <p>P</p>
+                </div>
+                     
+                </div>
+            </header>
+
+            <!-- for displaying right menu on mail  -->
+             <main class="grid grid-cols-[auto_60px] bg-[#F6F8FC] h-[87vh] 2xl:h-[92vh]">
+                 <!-- for displaying the mails -->
+                <section class="bg-white overflow-hidden bg-green-200 h-[97%] rounded-2xl">
+                    <!-- for display mails header option buttons -->
+                    <section class="px-5 flex items-center justify-between h-14">
+                        <!-- mail header left section -->
+                        <div class="flex items-center gap-4">
+                             <!-- for checkbox -->
+                              <div class="flex items-center gap-1">
+                                <input type="checkbox">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                                  </svg>
+                              </div>
+
+                <!-- for refersh -->
+                <div class="p-2 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"></path>
+                    </svg>
+                  </div>
+
+                     <!-- for vertical symbol (menu) -->
+                <div class="p-1 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"></path>
+                    </svg>
+                  </div>
+                        </div>
+
+                        <!-- mail hesder right section -->
+                        <div class="flex items-center gap-4 text-xs font-semibold text-[#5B5B5B]">
+                            <p>1-50 of 550</p>
+
+                        <!-- for both caret arrow -->
+                        <div class="p-2 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+                            </svg>
+                          </div>
+                          <div class="p-2 flex items-center justify-center rounded-full cursor-pointer hover:bg-gray-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                            </svg>
+                          </div>
+
+                          <!-- for keyword -->
+                          <div class="flex items-center gap-1">
+                            <div class="w-5 h-3 bg-gray-500"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+                            </svg>
+                          </div>
+                        </div>
+                    </section>
+
+                    <!-- multiple type of mail option -->
+                     <ul class="w-full h-14 flex items-center">
+                        <!-- for primary mail -->
+                        <li class="w-60 px-5 cursor-pointer flex items-center gap-4 h-full hover:bg-gray-100 text-[#0B57D0] relative">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H6.911a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z"></path>
+                            </svg>
+                            <p class="font-semibold text-sm">Primary</p>
+                            <!-- for blue line -->
+                            <div class="absolute bottom-0 left-2 w-56 h-1 bg-[#0B57D0] rounded-full"></div>
+                          </li>
+
+                            <!-- for promotions mails -->
+                        <li class="w-60 px-5 cursor-pointer flex items-center gap-4 h-full hover:bg-gray-100 text-[#5B5B5B]">
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"></path>
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"></path>
+                             </svg>
+                            <p class="font-semibold text-sm">Promotions</p>
+                        </li>
+
+                           <!-- for updates mail -->
+                         <li class="w-60 px-5 cursor-pointer flex items-center gap-4 h-full hover:bg-gray-100 text-[#5B5B5B]">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"></path>
+                           </svg>
+                           <p class="font-semibold text-sm">Updates</p>
+                         </li>
+                     </ul>
+
+                     <!-- for displaying received mail -->
+                      <ul class="bg-[#F2F6FC] divide-y-[1.5px] divide-gray-200 overflow-y-scroll h-full">
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="px-5 py-2 flex items-center gap-40 cursor-pointer hover:shadow hover:shadow-gray-400 group relative">
+                            <!-- for mail info -->
+                            <div class="flex items-center gap-3 text-gray-400">
+                                <input type="checkbox">
+                                <div class="text-gray-400 group-hover:text-black">
+                                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"></path>
+                                  </svg>
+                                </div>
+              
+                                <img class="w-6" src="https://ssl.gstatic.com/ui/v1/icons/mail/gm3/2x/label_important_fill_googyellow500_20dp.png" alt="important tag">
+                                <h4 class="text-black">iNeuron</h4>
+                              </div>
+
+                                 <!-- for mail message and time -->
+                          <div class="flex items-center gap-5 relative w-full">
+                              <p class="w-[85%] line-clamp-1">
+                                Important mail for 2 step verification cccccccccccccc
+                                    ccccccccccccccc ccccccc ccccccccccc
+                              </p>
+                              <p class="absolute right-1 text-gray-400 font-semibold text-sm">
+                              15:00
+                              </p>
+                          </div>
+
+                          <!-- for mail hover buttons options -->
+                          <div class="flex items-center gap-3 hidden absolute right-2 z-10 group-hover:flex group-hover:bg-[#F2F6FC]">
+                            <!-- for download button -->
+                            <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3"></path>
+                                </svg>
+                              </div>
+
+                          <!-- for delete button -->
+                          <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"></path>
+                                </svg>
+                          </div>
+
+                           <!-- for snooze button -->
+                         <div class="hover:bg-gray-200 p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                         </div>
+
+                          <!-- for mail button -->
+                        <div class="hover:bg-gray-200 p-2 rounded-full">
+                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-[1.2rem] h-[1.2rem]">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+                                 </svg>
+                        </div>
+                        </div>
+                     </li>
+
+                      </ul>
+                </section>
+
+                <!-- for right side menu options -->
+          <div class="flex flex-col items-center justify-between py-5">
+            <div>
+              <!-- for other apps icon -->
+              <ul class="flex flex-col items-center justify-center gap-5">
+                <li class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                  <img class="w-5" src="https://www.gstatic.com/companion/icon_assets/calendar_2020q4_2x.png" alt="calender">
+                </li>
+                <li class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                  <img class="w-5" src="https://www.gstatic.com/companion/icon_assets/keep_2020q4v3_2x.png" alt="notes">
+                </li>
+                <li class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                  <img class="w-5" src="https://www.gstatic.com/companion/icon_assets/tasks_2021_2x.png" alt="tasks">
+                </li>
+                <li class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                  <img class="w-5" src="https://www.gstatic.com/companion/icon_assets/contacts_2022_2x.png" alt="contacts">
+                </li>
+              </ul>
+
+              <!-- for divider -->
+              <div class="h-[1px] bg-gray-200 w-5 my-10 mx-auto"></div>
+
+              <!-- for google meet and more -->
+              <ul class="flex flex-col items-center justify-center gap-10">
+                <div class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                  <img class="w-5" src="https://lh3.googleusercontent.com/pw/AM-JKLUkiyTEgH-6DiQP85RGtd_BORvAuFnS9katNMgwYQBJUTiDh12qtQxMJFWYH2Dj30hNsNUrr-kzKMl7jX-Qd0FR7JmVSx-Fhruf8xTPPI-wdsMYez6WJE7tz7KmqsORKBEnBTiILtMJXuMvphqKdB9X=s128-no" alt="google meet">
+                </div>
+                <div class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+                  <img class="w-5" src="https://fonts.gstatic.com/s/i/googlematerialicons/add/v21/black-24dp/1x/gm_add_black_24dp.png" alt="get add ons">
+                </div>
+              </ul>
+            </div>
+
+            <!-- for carret symbol -->
+            <div class="hover:bg-gray-200 rounded-full p-2 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+              </svg>
+            </div>
+          </div>
+             </main>
+        </section>
+    </div>
+</div>
+</body>
+</html>
